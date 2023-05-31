@@ -36,8 +36,8 @@ $(document).ready(function() {
                 $('#responseMessage').removeClass().addClass('alert').addClass('alert-' + response.status).text(response.message);
                 form.trigger('reset');
             },
-            error: function() {
-                $('#responseMessage').removeClass().addClass('alert').addClass('alert-danger').text('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+            error: function(response) {
+                $('#responseMessage').removeClass().addClass('alert').addClass('alert-danger').text(response.message);
             }
         });
     });
